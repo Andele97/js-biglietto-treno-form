@@ -76,3 +76,8 @@ button {
   background-color: gray;
   border-right: 3px solid rgba(20, 20, 218, 0.565);
 }
+
+.container-ticket .ticket .info li {
+  color: black;
+  margin-top: 20px;
+}

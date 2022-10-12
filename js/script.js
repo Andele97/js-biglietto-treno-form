@@ -35,9 +35,3 @@ const aButton = document.querySelector('#btn-annulla');
 })
 
 // STAMPA
-
-const inputName = document.getElementById('btn-genera');
-inputName.addEventListener('click', function(){
-  const name = document.getElementById('input').value;
-  document.getElementById('passenger').value = name;
-})
