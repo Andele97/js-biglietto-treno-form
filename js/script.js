@@ -26,3 +26,17 @@ const gButton = document.querySelector('#btn-genera');
   gButton.addEventListener('click', function(){
     document.querySelector('.container-ticket').classList.add('d-block');
 })
+
+const aButton = document.querySelector('#btn-annulla');
+
+  aButton.addEventListener('click', function(){
+    document.querySelector('.container-ticket').classList.add('d-none');
+})
+
+// STAMPA
+
+const inputName = document.getElementById('btn-genera');
+inputName.addEventListener('click', function(){
+  const name = document.getElementById('input').value;
+  document.getElementById('passenger').value = name;
+})

@@ -22,7 +22,7 @@
       <form>
         <ul class="d-flex justify-content-around fs-5">
           <li>Nome e Cognome
-            <input id="input" type="text" placeholder="Inserici il nome" value="">
+            <input id="input" type="name" placeholder="Inserici il nome" value="Andrea Pinna">
           </li>
 
           <li>Km da percorrere
@@ -30,10 +30,10 @@
           </li>
 
           <li>Fascia d'età
-            <select name="genere" id="genere">
-              <option value="etaMinore">Minorenne</option>
-              <option value="Maggiorenne">Maggiorenne</option>
-              <option value="etaAnziana">Over65</option>
+            <select name="genere" id="eta">
+              <option value="etaMinore">minorenne</option>
+              <option value="Maggiorenne">maggiorenne</option>
+              <option value="etaAnziana">over65</option>
             </select>
           </li>
         </ul>
@@ -48,8 +48,8 @@
 
     <div class="container-ticket d-flex justify-content-center align-items-center d-none">
       <div class="ticket">
-        <div class="passenger">
-
+        <div class="container-pass d-flex justify-content-center align-items-center">
+          <h2 id="passenger">Passeggero:</h2>
         </div>
       </div>
     </div>
