@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- BOOTSTRAP -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/style.css">
+
+  <title>Biglietteria</title>
+</head>
+<body>
+
+  <div class="container d-flex justify-content-center align-items-center flex-column">
+
+    <h1 class="fw-bolder">BIGLIETTERIA</h1>
+    
+    <div class="ap-box">
+
+      <form>
+        <ul class="d-flex justify-content-around fs-5">
+          <li>Nome e Cognome
+            <input id="input" type="text" placeholder="Inserici il nome" value="">
+          </li>
+
+          <li>Km da percorrere
+            <input id="km" type="text" placeholder="Inserici i Km" value="">
+          </li>
+
+          <li>Fascia d'età
+            <select name="genere" id="genere">
+              <option value="etaMinore">Minorenne</option>
+              <option value="Maggiorenne">Maggiorenne</option>
+              <option value="etaAnziana">Over65</option>
+            </select>
+          </li>
+        </ul>
+
+        <div class="container-btn w-100 d-flex justify-content-center">
+          <button id="btn-genera">Genera</button>
+          <button id="btn-annulla">Annulla</button>
+        </div>
+      </form>
+
+    </div>
+
+    <div class="container-ticket d-flex justify-content-center align-items-center d-none">
+      <div class="ticket">
+        <div class="passenger">
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
