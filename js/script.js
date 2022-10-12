@@ -24,6 +24,7 @@ else if (eta > etaAnziana) {
 const gButton = document.querySelector('#btn-genera');
 
   gButton.addEventListener('click', function(){
+    document.querySelector('.container-ticket').classList.remove('d-none');
     document.querySelector('.container-ticket').classList.add('d-block');
 })
 
