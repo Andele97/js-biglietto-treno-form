@@ -1,83 +1,52 @@
-body {
-  background-image: url(../assets/img/sfondo.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.container {
-  height: 1000px;
-}
-
-.ap-box {
-  background-color: rgba(20, 20, 218, 0.565);
-  width: 70%;
-  height: 300px;
-  border-radius: 20px;
-  box-shadow: 1px 2px 2px 3px rgba(0, 0, 0, 0.50);
-  padding: 20px;
-  margin-top: 50px;
-}
-
-h1 {
-  color: rgba(31, 46, 208, 0.688);
-  text-decoration: underline;
-}
-
-ul {
-  list-style: none;
-  padding-bottom: 50px;
+body{
+  background-color: brown;
   color: white;
 }
 
-li {
-  margin: 10px 20px 0px 0px;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-}
-
-input {
-  margin-top: 20px;
-  border-radius: 5px;
-  border: 1px solid;
-}
-
-select {
-  margin-top: 20px;
-}
-
-button {
-  border-radius: 5px;
-  padding: 5px;
-  font-weight: bold;
-  font-size: 1.2em;
-  margin-right: 10px;
-  color: red;
-}
-
-.container-ticket {
-  width: 70%;
-  height: 300px;
-  background-color: rgba(20, 20, 218, 0.565);
-  margin-top: 50px;
+.sc-container, .ticket{
+  margin-top: 100px;
   border-radius: 15px;
-}
-
-.container-ticket .ticket {
-  width: 95%;
-  height: 90%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+  padding: 150px 200px;
+  text-align: center;
   background-color: white;
-  border-radius: 10px;
 }
 
-.container-ticket .ticket .container-pass {
-  width: 32%;
-  height: 100%;
-  background-color: gray;
-  border-right: 3px solid rgba(20, 20, 218, 0.565);
+label{
+  display: block;
+  margin-bottom: 20px;
+  color: brown;
 }
 
-.container-ticket .ticket .info li {
-  color: black;
-  margin-top: 20px;
+input, select{
+  border-radius: 5px;
+  padding: 5px 10px;
+  text-align: center;
+  border: 1px solid brown;
+  background: white;
+  color: brown;
+  margin-bottom: 20px;
+}
+
+input::placeholder{
+  color: brown;
+}
+
+input:focus, 
+select:focus
+{
+  background-color: brown;
+  color: white;
+}
+
+input:focus::placeholder{
+  color: white;
+}
+.ticket{
+  opacity: 1;
+  transition: all 1s;
+}
+
+.hide{
+  opacity: 0;
 }

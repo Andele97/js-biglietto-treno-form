@@ -1,37 +1,63 @@
-const prezzoKm = 0.21;
-const scontoVenti = 0.2;
-const scontoQuaranta = 0.4;
-const etaMinore = 18;
-const etaAnziana = 65;
-let prezzoBiglietto;
-let prezzoFinale;
-let sconto;
+/* ELEMENTI */
+/* bottoni */
+const btnGenera = document.getElementById('genera');
+const btnReset = document.getElementById('annulla');
+/* input */
+const inputName = document.getElementById('name');
+const inputKm = document.getElementById('km');
+const inputRange = document.getElementById('fascia');
+/* output */
+const outputName = document.getElementById('outputName');
+const outputOffer = document.getElementById('outputOffer');
+const outputCoach = document.getElementById('outputCoach');
+const outputCP = document.getElementById('outputCP');
+const outputPrice = document.getElementById('outputPrice');
+const ticketBox = document.querySelector('.ticket');
 
-prezzoBiglietto = prezzoKm * km;
 
-if (eta < etaMinore) {
-  sconto = prezzoBiglietto * scontoVenti;
-  prezzoFinale = prezzoBiglietto - sconto;
-}
+/* DATI DI PARTENZA */
+let passengerName, totalKm, ageRange, totalPrice, coach, code;
+const juniorDiscount = .20;
+const silverDiscount = .40;
+const priceForKm = .21;
 
-else if (eta > etaAnziana) {
-  sconto = prezzoBiglietto * scontoQuaranta;
-  prezzoFinale = prezzoBiglietto - sconto;
-} else {
-  prezzoFinale = prezzoBiglietto;
-}
 
-const gButton = document.querySelector('#btn-genera');
+/* EVENTI */
+btnGenera.addEventListener('click', function(){
+  /* valorizzo i dati */
+  passengerName = inputName.value;
+  totalKm = inputKm.value;
+  ageRange = inputRange.value;
+  coach = Math.ceil(Math.random() * 12);
+  code = Math.floor(Math.random() * (999999 - 100000) +1 ) + 100000;
+  totalPrice = totalKm * priceForKm;
 
-  gButton.addEventListener('click', function(){
-    document.querySelector('.container-ticket').classList.remove('d-none');
-    document.querySelector('.container-ticket').classList.add('d-block');
+  let labelOffer = 'Biglietto standard';
+
+  console.log(totalPrice)
+  /* calcolo lo sconto */
+  if(ageRange === 'minorenne') {
+    totalPrice *= (1 - juniorDiscount);
+    labelOffer = 'Sconto junior';
+  }else if(ageRange === 'silver'){
+    totalPrice *= (1 - silverDiscount)
+    labelOffer = 'Sconto silver';
+  }
+  
+  outputName.innerHTML = passengerName;
+  outputOffer.innerHTML = labelOffer;
+  outputCoach.innerHTML = coach;
+  outputCP.innerHTML = code;
+  outputPrice.innerHTML = '€ ' +totalPrice.toFixed(2);
+
+  ticketBox.classList.remove('hide');
+
+});
+
+btnReset.addEventListener('click',function(){
+  inputName.value = '';
+  inputKm.value = '';
+  inputRange.value = 'maggiorenne';
+
+  ticketBox.classList.add('hide');
 })
-
-const aButton = document.querySelector('#btn-annulla');
-
-  aButton.addEventListener('click', function(){
-    document.querySelector('.container-ticket').classList.add('d-none');
-})
-
-// STAMPA
